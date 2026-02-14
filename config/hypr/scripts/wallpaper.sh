@@ -12,9 +12,7 @@ mkdir -p "$WALLPAPER_DIR" "$(dirname "$CACHE_FILE")"
 set_wallpaper() {
     local img="$1"
     swww img "$img" \
-        --transition-type fade \
-        --transition-duration 1 \
-        --transition-fps 30
+        --transition-type none
     echo "$img" > "$CACHE_FILE"
 }
 
