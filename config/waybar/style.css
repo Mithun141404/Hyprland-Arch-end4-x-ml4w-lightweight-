@@ -59,7 +59,7 @@ tooltip label {
     margin: 4px 2px;
     border-radius: 12px;
     background: @bg;
-    transition: opacity 0.2s ease;
+    transition: none;
 }
 
 /* ── Left Group: Launcher ─────────────────────────── */
@@ -91,7 +91,7 @@ tooltip label {
     min-height: 20px;
     background: transparent;
     border: none;
-    transition: opacity 0.2s ease;
+    transition: none;
 }
 
 #workspaces button.active {
@@ -135,11 +135,11 @@ tooltip label {
     padding: 0 8px;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
 }
 
