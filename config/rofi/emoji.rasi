@@ -1,0 +1,83 @@
+/* ╔══════════════════════════════════════════════════════╗ */
+/* ║  HyprLite — Rofi Emoji Picker Theme                ║ */
+/* ╚══════════════════════════════════════════════════════╝ */
+
+* {
+    bg:          rgba(17, 17, 27, 0.88);
+    bg-alt:      rgba(30, 30, 46, 0.95);
+    bg-selected: rgba(203, 166, 247, 0.22);
+    fg:          #cdd6f4;
+    fg-dim:      #6c7086;
+    accent:      #cba6f7;
+    border-col:  rgba(203, 166, 247, 0.5);
+
+    font: "JetBrainsMono Nerd Font 13";
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 400px;
+    height: 500px;
+    location: center;
+    anchor: center;
+    background-color: @bg;
+    border: 2px solid;
+    border-color: @border-col;
+    border-radius: 16px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    spacing: 8px;
+    padding: 16px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-alt;
+    border-radius: 12px;
+    padding: 10px 14px;
+    spacing: 10px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search emoji...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    background-color: transparent;
+    columns: 6;
+    lines: 8;
+    spacing: 4px;
+    cycle: true;
+    scrollbar: false;
+    fixed-height: true;
+}
+
+element {
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+element selected.normal {
+    background-color: @bg-selected;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: @fg;
+    horizontal-align: 0.5;
+    font: "Noto Color Emoji 20";
+}

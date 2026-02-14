@@ -1,0 +1,93 @@
+/* ╔══════════════════════════════════════════════════════╗ */
+/* ║  HyprLite — Rofi Power Menu Theme                  ║ */
+/* ╚══════════════════════════════════════════════════════╝ */
+
+* {
+    bg:          rgba(17, 17, 27, 0.88);
+    bg-alt:      rgba(30, 30, 46, 0.95);
+    bg-selected: rgba(203, 166, 247, 0.22);
+    fg:          #cdd6f4;
+    fg-dim:      #6c7086;
+    accent:      #cba6f7;
+    border-col:  rgba(203, 166, 247, 0.5);
+    red:         #f38ba8;
+
+    font: "JetBrainsMono Nerd Font 24";
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 420px;
+    location: center;
+    anchor: center;
+    background-color: @bg;
+    border: 2px solid;
+    border-color: @border-col;
+    border-radius: 16px;
+    cursor: "default";
+}
+
+mainbox {
+    background-color: transparent;
+    children: [message, listview];
+    spacing: 12px;
+    padding: 20px;
+}
+
+message {
+    background-color: transparent;
+    padding: 4px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @accent;
+    font: "JetBrainsMono Nerd Font 14";
+    horizontal-align: 0.5;
+    str: "Power Menu";
+}
+
+listview {
+    background-color: transparent;
+    columns: 5;
+    lines: 1;
+    spacing: 12px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+}
+
+element {
+    background-color: @bg-alt;
+    orientation: vertical;
+    spacing: 8px;
+    padding: 16px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+element selected.normal {
+    background-color: @bg-selected;
+    border: 2px solid;
+    border-color: @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 0px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: @fg;
+    horizontal-align: 0.5;
+    cursor: inherit;
+    font: "JetBrainsMono Nerd Font 28";
+}
+
+element-text selected {
+    text-color: @accent;
+}

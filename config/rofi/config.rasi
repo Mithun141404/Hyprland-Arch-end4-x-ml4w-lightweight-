@@ -1,0 +1,21 @@
+/* ╔══════════════════════════════════════════════════════╗ */
+/* ║  HyprLite — Rofi Main Config                       ║ */
+/* ╚══════════════════════════════════════════════════════╝ */
+
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "";
+    display-run: "";
+    display-filebrowser: "";
+    drun-display-format: "{name}";
+    font: "JetBrainsMono Nerd Font 13";
+    click-to-exit: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    matching: "fuzzy";
+    sort: true;
+    sorting-method: "fzf";
+    steal-focus: true;
+}

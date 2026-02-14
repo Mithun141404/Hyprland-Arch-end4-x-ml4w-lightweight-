@@ -1,0 +1,246 @@
+/* ╔══════════════════════════════════════════════════════╗ */
+/* ║  HyprLite — Waybar Style (End-4 Inspired)          ║ */
+/* ╚══════════════════════════════════════════════════════╝ */
+
+/* ── CSS Variables (Catppuccin Mocha) ─────────────── */
+@define-color bg rgba(17, 17, 27, 0.6);
+@define-color bg-alt rgba(30, 30, 46, 0.8);
+@define-color fg #cdd6f4;
+@define-color fg-dim #6c7086;
+@define-color accent #cba6f7;
+@define-color accent-alt #89b4fa;
+@define-color green #a6e3a1;
+@define-color red #f38ba8;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color surface0 rgba(49, 50, 68, 0.7);
+
+/* ── Global Bar ───────────────────────────────────── */
+window#waybar {
+    background: transparent;
+    color: @fg;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    transition: none;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ── Tooltip ──────────────────────────────────────── */
+tooltip {
+    background: @bg-alt;
+    border: 1px solid @accent;
+    border-radius: 10px;
+    color: @fg;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 4px 8px;
+}
+
+/* ── All Modules Base ─────────────────────────────── */
+#workspaces,
+#custom-launcher,
+#mpris,
+#cpu,
+#memory,
+#tray,
+#wireplumber,
+#network,
+#bluetooth,
+#battery,
+#clock,
+#custom-notification,
+#custom-power {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    background: @bg;
+    transition: opacity 0.2s ease;
+}
+
+/* ── Left Group: Launcher ─────────────────────────── */
+#custom-launcher {
+    font-size: 18px;
+    color: @accent;
+    padding: 0 14px;
+    margin-left: 2px;
+}
+
+#custom-launcher:hover {
+    opacity: 0.8;
+}
+
+/* ── Left Group: Workspaces ───────────────────────── */
+#workspaces {
+    padding: 0 4px;
+    background: @bg;
+}
+
+#workspaces button {
+    color: @fg-dim;
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 20px;
+    min-height: 20px;
+    background: transparent;
+    border: none;
+    transition: opacity 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: @accent;
+    border-radius: 10px;
+}
+
+#workspaces button.empty {
+    color: @fg-dim;
+    opacity: 0.5;
+}
+
+#workspaces button:hover {
+    opacity: 0.8;
+    color: @fg;
+}
+
+/* ── Center: MPRIS Media ──────────────────────────── */
+#mpris {
+    color: @fg;
+    font-size: 12px;
+    padding: 0 16px;
+}
+
+#mpris.paused {
+    color: @fg-dim;
+}
+
+/* ── Right Group: System Stats ────────────────────── */
+#cpu {
+    color: @accent-alt;
+}
+
+#memory {
+    color: @green;
+}
+
+/* ── Right Group: Pill Cluster (tray/audio/net/bt) ── */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#wireplumber {
+    color: @peach;
+}
+
+#wireplumber.muted {
+    color: @fg-dim;
+}
+
+#network {
+    color: @accent-alt;
+}
+
+#network.disconnected {
+    color: @fg-dim;
+}
+
+#bluetooth {
+    color: @accent-alt;
+}
+
+#bluetooth.disabled {
+    color: @fg-dim;
+}
+
+/* ── Battery States ───────────────────────────────── */
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        color: @fg;
+    }
+}
+
+/* ── Clock ────────────────────────────────────────── */
+#clock {
+    color: @fg;
+    font-weight: bold;
+}
+
+/* ── Notifications ────────────────────────────────── */
+#custom-notification {
+    color: @fg;
+    padding: 0 8px;
+}
+
+/* ── Power Button ─────────────────────────────────── */
+#custom-power {
+    color: @red;
+    font-size: 16px;
+    padding: 0 12px;
+    margin-right: 2px;
+}
+
+#custom-power:hover {
+    opacity: 0.8;
+}
+
+/* ── Pill Group Styling ───────────────────────────── */
+/* Left pill group */
+#custom-launcher,
+#workspaces {
+    background: @bg;
+}
+
+/* Right status pill group */
+#cpu,
+#memory {
+    background: @bg;
+}
+
+/* Right controls pill group */
+#wireplumber,
+#network,
+#bluetooth,
+#battery {
+    background: @bg;
+}
+
+/* Separator visual spacing */
+#cpu {
+    margin-left: 6px;
+}
+
+#custom-power {
+    margin-left: 2px;
+}
