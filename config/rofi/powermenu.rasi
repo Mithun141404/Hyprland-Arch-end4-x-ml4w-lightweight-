@@ -18,7 +18,7 @@
 }
 
 window {
-    width: 420px;
+    width: 600px;
     location: center;
     anchor: center;
     background-color: @bg;
@@ -85,7 +85,7 @@ element-text {
     text-color: @fg;
     horizontal-align: 0.5;
     cursor: inherit;
-    font: "JetBrainsMono Nerd Font 28";
+    font: "JetBrainsMono Nerd Font 14";
 }
 
 element-text selected {

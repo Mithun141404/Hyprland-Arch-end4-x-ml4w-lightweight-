@@ -3,7 +3,7 @@
 # ║  HyprLite — Power Menu Script                      ║
 # ╚══════════════════════════════════════════════════════╝
 
-options="  Lock\n  Logout\n  Suspend\n  Reboot\n  Shutdown"
+options="Lock\nLogout\nSuspend\nReboot\nShutdown"
 
 chosen=$(echo -e "$options" | rofi -dmenu \
     -theme ~/.config/rofi/powermenu.rasi \
